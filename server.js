@@ -22,7 +22,7 @@ setInterval(() => {
     https.get(serverUrl, (res) => {
         console.log("Ping successful to keep server awake!");
     });
-}, 14 * 60 * 1000); // 14 Minutes
+}, 1 * 60 * 1000); // 14 Minutes
 
 
 connectDB().then(() => {
