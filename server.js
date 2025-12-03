@@ -11,9 +11,19 @@ app.use("/api", router);
 
 const Port = process.env.PORT || 5000;
 
-setTimeout(() => {
-  console.log('hi');
-}, 1000 * 60 * 14); // 14 minutes
+// Isse import karna zaroori hai
+const https = require('https');
+
+// Apna Render wala URL yahan likhein
+const serverUrl = "https://Price.log.onrender.com/api/auth/products"; 
+
+// setInterval use karein taaki ye har 14 minute mein repeat ho
+setInterval(() => {
+    https.get(serverUrl, (res) => {
+        console.log("Ping successful to keep server awake!");
+    });
+}, 14 * 60 * 1000); // 14 Minutes
+
 
 connectDB().then(() => {
 app.listen(Port, () => {
