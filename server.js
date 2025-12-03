@@ -11,6 +11,10 @@ app.use("/api", router);
 
 const Port = process.env.PORT || 5000;
 
+setTimeout(() => {
+  console.log('hi');
+}, 1000 * 60 * 14); // 14 minutes
+
 connectDB().then(() => {
 app.listen(Port, () => {
     console.log(`Server is running on port ${Port}`);
