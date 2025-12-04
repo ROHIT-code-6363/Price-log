@@ -11,14 +11,14 @@ app.use(express.json());
 app.use("/api", router);
 
 // Apna Render wala URL yahan likhein
-const serverUrl = "https://price.log.onrender.com/api/auth/products"; 
+const serverUrl = "https://price-log.onrender.com/api/auth/products"; 
 
 // setInterval use karein taaki ye har 14 minute mein repeat ho
 setInterval(() => {
     https.get(serverUrl, (res) => {
         console.log("Ping successful to keep server awake!");
     });
-}, 1 * 60 * 1000); // 14 Minutes
+}, 1 * 60 * 1000); // 1 Minutes
 
 const Port = process.env.PORT || 5000;
 
