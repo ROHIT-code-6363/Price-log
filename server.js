@@ -18,7 +18,7 @@ setInterval(() => {
     https.get(serverUrl, (res) => {
         console.log("Ping successful to keep server awake!");
     });
-}, 1 * 60 * 1000); // 1 Minutes
+}, 10 * 60 * 1000); // 10 Minutes
 
 const Port = process.env.PORT || 5000;
 
